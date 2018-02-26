@@ -51,7 +51,7 @@ hibernate Java项目 基本学习
 
 ### 4、编写实体表映射
     默认与实体同一目录
-    ```
+   ```
     <?xml version="1.0" encoding="UTF-8"?>
     <!--文档说明，设置映射文件  -->
     <!DOCTYPE hibernate-mapping
@@ -85,7 +85,7 @@ hibernate Java项目 基本学习
             <property name="pass" length="32"/>
         </class>
     </hibernate-mapping>
-    ```
+   ```
  #### 5、测试
  ```    
         @Test
