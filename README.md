@@ -147,3 +147,26 @@ hibernate Java项目 基本学习
     d、并用Session对象生成Transaction对象；
     e、可通过Session对象的get(),load(),save(),update(),delete()和saveOrUpdate()、createQuery()等方法对进行CURD等操作；
     f、提交事物
+ ## 三、实体类的三种状态
+    1、瞬时态
+        与session无关联
+        对象中无ID
+        一般用于保存
+    2、持久态
+        与session有关联
+        对象中有ID
+        一般指session查出来的对象
+        
+    3、托管态
+        与session无关联
+        对象中有ID
+ ## 四、缓存
+   ### 1、一级缓存
+        （1）默认是打开的
+        （2）使用范围为session
+        （3）存储的数据为持久态数据
+         （基于快照的机制）对该持久态数据做修改，会在提交事务的时候自动更新数据库而不需要调用update方法
+   ### 2、二级缓存
+        （1）目前已不使用，使用Redis替代
+        （2）默认不是打开，需要配置
+        （3）适用范围为sessionfactory
