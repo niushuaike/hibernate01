@@ -56,7 +56,7 @@ public class TestOne2Many {
             transaction = session.beginTransaction();
 
             Customer customer = new Customer();
-            customer.setName("猪八戒");
+            customer.setName("猪八戒6");
             customer.setSex("5");
 
             Order order = new Order();

@@ -47,7 +47,7 @@ public class TestHibernate {
             transaction = session.beginTransaction();
             User user = session.get(User.class, 1);
             System.out.println(user);
-            user.setName("西方不败");
+            user.setName("西方不败2");
             User user1 = session.get(User.class, 1);
             System.out.println(user1);
             transaction.commit();

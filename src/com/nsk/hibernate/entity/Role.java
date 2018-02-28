@@ -12,7 +12,7 @@ import java.util.Set;
 public class Role {
     private String id;
     private String name;
-    private String desc;
+    private String descript;
 
     public String getId() {
         return id;
@@ -30,12 +30,12 @@ public class Role {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescript() {
+        return descript;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescript(String descript) {
+        this.descript = descript;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Role {
         return "Role{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
+                ", descript='" + descript + '\'' +
                 '}';
     }
 

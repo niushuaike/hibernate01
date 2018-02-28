@@ -12,7 +12,7 @@
     table:表名  -->
     <class name="User" table="tb_user">
         <!--id:主键，name:属性名称，column：字段名称  -->
-        <id name="id" column="id">
+        <id name="id" column="id" length="65">
             <!--generator:主键生成策略
             class:标记主键如何生成
             取值：

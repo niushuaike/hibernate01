@@ -12,7 +12,7 @@
     table:表名  -->
     <class name="Role" table="tb_role">
         <!--id:主键，name:属性名称，column：字段名称  -->
-        <id name="id" column="id">
+        <id name="id" column="id" length="65">
             <!--generator:主键生成策略
             class:标记主键如何生成
             取值：
@@ -28,7 +28,7 @@
         </id>
         <!--配置属性对应的字段  -->
         <property name="name" length="16" column="name"/>
-        <property name="desc" length="16" column="desc"/>
+        <property name="descript" length="16" column="descript"/>
 
         <set name="users" table="tb_user_role">
             <key column="rid"></key>
