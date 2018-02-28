@@ -24,10 +24,16 @@
             6、foreign：外键
             7、increment：自己维护自增关系
               -->
-            <generator class="native"/>
+            <generator class="uuid"/>
         </id>
         <!--配置属性对应的字段  -->
-        <property name="name" length="16" column="username"/>
+        <property name="name" length="16" />
         <property name="pass" length="32"/>
+
+        <set name="roles" table="tb_user_role">
+            <key column="uid"></key>
+            <many-to-many class="Role" column="rid"></many-to-many>
+        </set>
+
     </class>
 </hibernate-mapping>

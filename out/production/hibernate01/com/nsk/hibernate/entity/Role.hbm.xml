@@ -10,7 +10,7 @@
     <!--属性：
     name:类名
     table:表名  -->
-    <class name="User" table="tb_user">
+    <class name="Role" table="tb_role">
         <!--id:主键，name:属性名称，column：字段名称  -->
         <id name="id" column="id">
             <!--generator:主键生成策略
@@ -27,12 +27,12 @@
             <generator class="uuid"/>
         </id>
         <!--配置属性对应的字段  -->
-        <property name="name" length="16" />
-        <property name="pass" length="32"/>
+        <property name="name" length="16" column="username"/>
+        <property name="desc" length="16" column="desc"/>
 
-        <set name="roles" table="tb_user_role">
-            <key column="uid"></key>
-            <many-to-many class="Role" column="rid"></many-to-many>
+        <set name="users" table="tb_user_role">
+            <key column="rid"></key>
+            <many-to-many class="User" column="uid"></many-to-many>
         </set>
 
     </class>

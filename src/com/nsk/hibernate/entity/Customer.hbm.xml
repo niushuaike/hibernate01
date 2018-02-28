@@ -10,7 +10,7 @@
     <!--属性：
     name:类名
     table:表名  -->
-    <class name="User" table="tb_user">
+    <class name="Customer" table="tb_customer">
         <!--id:主键，name:属性名称，column：字段名称  -->
         <id name="id" column="id">
             <!--generator:主键生成策略
@@ -27,13 +27,17 @@
             <generator class="uuid"/>
         </id>
         <!--配置属性对应的字段  -->
-        <property name="name" length="16" />
-        <property name="pass" length="32"/>
+        <property name="name" length="16" column="username"/>
+        <property name="sex" length="2"/>
 
-        <set name="roles" table="tb_user_role">
-            <key column="uid"></key>
-            <many-to-many class="Role" column="rid"></many-to-many>
+        <!--
+            cascade:配置关联关系属性
+            inverse:默认false，为不放弃维护关联关系属性；true，为放弃
+        -->
+
+        <set name="orders" cascade="save-update,delete" inverse="true">
+            <key column="cid"></key>
+            <one-to-many class="Order"></one-to-many>
         </set>
-
     </class>
 </hibernate-mapping>
