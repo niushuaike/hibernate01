@@ -1,6 +1,8 @@
 import com.nsk.hibernate.entity.User;
+import com.nsk.hibernate.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 
@@ -23,6 +25,19 @@ public class TestHibernate {
         // 4、操作数据
         System.out.println(session.save(new User("测试", "666666")));
         // 5、关闭
+        session.close();
+    }
+
+    @Test
+    public void testquery() {
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        User user = session.get(User.class, 1);
+        System.out.println(user);
+
+        transaction.commit();
         session.close();
     }
 }
