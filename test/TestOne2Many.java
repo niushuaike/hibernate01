@@ -56,16 +56,16 @@ public class TestOne2Many {
             transaction = session.beginTransaction();
 
             Customer customer = new Customer();
-            customer.setName("猪八戒6");
+            customer.setName("猪八戒7");
             customer.setSex("5");
 
             Order order = new Order();
             order.setOrderno("001");
-            order.setProduct("华硕路由器8");
+            order.setProduct("华硕路由器10");
 
             Order order2 = new Order();
             order2.setOrderno("002");
-            order2.setProduct("小米路由器8");
+            order2.setProduct("小米路由器10");
 
             customer.getOrders().add(order2);
             customer.getOrders().add(order);
